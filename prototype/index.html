@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeMind AI - UML & Security Analysis</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <h1>CodeMind AI</h1>
+          <button class="new-chat-btn">
+            <i class="fas fa-plus"></i>
+            New Chat
+          </button>
+        </div>
+
+        <div class="chat-history">
+          <h3>Recent Chats</h3>
+          <div class="history-item active">
+            <i class="fas fa-comment"></i>
+            <span>UML Analysis - React Project</span>
+          </div>
+          <div class="history-item">
+            <i class="fas fa-shield-alt"></i>
+            <span>Security Scan - Node.js App</span>
+          </div>
+          <div class="history-item">
+            <i class="fas fa-code"></i>
+            <span>Code Review - Python API</span>
+          </div>
+        </div>
+
+        <div class="sidebar-footer">
+          <button class="settings-btn">
+            <i class="fas fa-cog"></i>
+            Settings
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Chat Area -->
+      <main class="chat-container">
+        <div class="chat-header">
+          <h2>UML Analysis - React Project</h2>
+          <div class="header-actions">
+            <button class="action-btn">
+              <i class="fas fa-share"></i>
+            </button>
+            <button class="action-btn">
+              <i class="fas fa-ellipsis-v"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="chat-messages">
+          <!-- User Message -->
+          <div class="message user-message">
+            <div class="message-content">
+              <p>
+                Can you generate a UML diagram for this repository:
+                https://github.com/example/react-app<br />
+                <strong
+                  >Give me a 50 words of summary for the UML diagram.</strong
+                >
+              </p>
+            </div>
+          </div>
+
+          <!-- AI Response with UML Preview -->
+          <div class="message ai-message">
+            <div class="message-content">
+              <p>
+                I'll analyze the repository and generate a UML diagram for you.
+              </p>
+              <div class="uml-preview">
+                <div class="preview-header">
+                  <h4>UML Diagram Preview</h4>
+                  <div class="preview-actions">
+                    <button class="preview-btn">
+                      <i class="fas fa-download"></i>
+                      Download PUML
+                    </button>
+                    <button class="preview-btn">
+                      <i class="fas fa-expand"></i>
+                      Full Screen
+                    </button>
+                    <button class="preview-btn">
+                      <i class="fas fa-file-alt"></i>
+                      Preview PUML
+                    </button>
+                  </div>
+                </div>
+                <div class="preview-content">
+                  <!-- UML Diagram Preview -->
+                  <img
+                    src="images/sample-uml.svg"
+                    alt="UML Diagram Preview"
+                    class="diagram-image"
+                  />
+                </div>
+              </div>
+              <div class="uml-summary">
+                <h4>Summary</h4>
+                <p>
+                  This UML diagram models a user management system with four
+                  main components: User, UserService, UserRepository, and
+                  EmailService. It illustrates class attributes, methods, and
+                  relationships, showing how UserService interacts with
+                  repositories and services to manage users and send
+                  notifications, supporting modular and maintainable application
+                  architecture.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- User Message -->
+          <div class="message user-message">
+            <div class="message-content">
+              <p>Can you also scan for any security vulnerabilities?</p>
+            </div>
+          </div>
+
+          <!-- AI Response with Security Analysis -->
+          <div class="message ai-message">
+            <div class="message-content">
+              <div class="security-analysis">
+                <h4>Security Analysis Results</h4>
+                <div class="analysis-item warning">
+                  <i class="fas fa-exclamation-triangle"></i>
+                  <div class="analysis-content">
+                    <h5>High Severity: SQL Injection Risk</h5>
+                    <p>Found in: src/database/queries.js:45</p>
+                    <p>Recommendation: Use parameterized queries</p>
+                  </div>
+                </div>
+                <div class="analysis-item info">
+                  <i class="fas fa-info-circle"></i>
+                  <div class="analysis-content">
+                    <h5>Medium Severity: Outdated Dependencies</h5>
+                    <p>Found: 3 outdated packages with known vulnerabilities</p>
+                    <p>Recommendation: Update to latest versions</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="chat-input-container">
+          <div class="input-wrapper">
+            <textarea
+              placeholder="Ask me to analyze code, generate UML diagrams, or scan for vulnerabilities..."
+              rows="1"
+            ></textarea>
+            <button class="send-btn">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+          <div class="input-footer">
+            <span class="disclaimer"
+              >CodeMind AI may produce inaccurate information about people,
+              places, or facts.</span
+            >
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="js/modal.js"></script>
+    <script src="js/script.js"></script>
+
+    <!-- PUML Preview Modal (hidden by default) -->
+    <div id="puml-modal" class="puml-modal">
+      <div class="puml-modal-content">
+        <div class="puml-modal-header">
+          <span>PUML File Preview</span>
+          <button id="close-puml-modal" class="close-puml-modal">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <pre class="puml-code"><code>@startuml
+skinparam classAttributeIconSize 0
+
+class User {
+    -id: string
+    -name: string
+    -email: string
+    +create(): User
+    +update(): void
+}
+
+class UserService {
+    -userRepository: UserRepository
+    -emailService: EmailService
+    +findById(id: string): User
+    +createUser(data: UserData): User
+    +updateUser(id: string, data: UserData): User
+}
+
+interface UserRepository {
+    +findById(id: string): User
+    +save(user: User): User
+    +delete(id: string): void
+}
+
+class EmailService {
+    +sendWelcomeEmail(user: User): void
+    +sendPasswordReset(user: User): void
+    +sendNotification(user: User, msg: string): void
+}
+
+UserService --> User : manages
+UserService --> UserRepository : uses
+UserService --> EmailService : uses
+@enduml</code></pre>
+      </div>
+    </div>
+  </body>
+</html>
