@@ -3,7 +3,7 @@ import React from 'react';
 const Sidebar = () => (
   <aside className="sidebar">
     <div className="sidebar-header">
-      <h1>CodeMind AI</h1>
+      <h1>Code Catalyst</h1>
       <button className="new-chat-btn">
         <i className="fas fa-plus"></i>
         New Chat

@@ -309,3 +309,17 @@ body {
   font-size: 0.9375rem;
   line-height: 1.6;
 }
+
+.security-alert {
+  margin-top: 1rem;
+  padding: 1.25rem;
+  background: #fef2f2;
+  border-radius: 8px;
+  border: 1px solid #fca5a5;
+}
+.security-alert h4 {
+  margin: 0 0 0.75rem 0;
+  color: #b91c1c;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
